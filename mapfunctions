@@ -1,0 +1,41 @@
+ private void plotMarkers(List<GeoData> geoDatas) {
+        putMarkers();
+    }
+
+    private void putMarkers() {
+
+        markers = new ArrayList<MarkerOptions>();
+
+        //setting up the markers on the map
+        markermap = new HashMap<Marker, GeoData>();
+
+        //Adding Point of interest items
+        for (int i = 0; i < geoDatas.size(); i++) {
+            GeoData data = geoDatas.get(i);
+            marker = new MarkerOptions().position(new LatLng(Double.parseDouble(data.getBorrowerLat()), Double.parseDouble(data.getBorrowerLong()))).title(data.getId());
+            marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+//            googleMap.addMarker(marker);
+
+            //Marker addition
+            mapmarker = placeMarker(data);
+            markermap.put(mapmarker, data);
+            markers.add(marker);
+        }
+
+        //Current Location
+        LatLng currentLatLng = CommonCode.getCurrentLatLong(context);
+        Location current = new Location("mylocation");
+        current.setLatitude(currentLatLng.latitude);
+        current.setLongitude(currentLatLng.longitude);
+    }
+
+
+    public Marker placeMarker(GeoData pointItem) {
+        Marker marker = mMap.addMarker(
+                new MarkerOptions()
+                        .position(new LatLng(Double.parseDouble(pointItem.getBorrowerLat()), Double.parseDouble(pointItem.getBorrowerLong())))
+                        .title(pointItem.getId())
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                        .snippet(pointItem.getId()));
+        return marker;
+    }
