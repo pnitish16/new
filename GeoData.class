@@ -1,0 +1,119 @@
+package in.co.unionbankofindia.unionbankrecovery.model;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class GeoData {
+
+    @SerializedName("id")
+    @Expose
+    private String id;
+    @SerializedName("borrower_name")
+    @Expose
+    private String borrowerName;
+    @SerializedName("borrower_address")
+    @Expose
+    private String borrowerAddress;
+    @SerializedName("borrower_lat")
+    @Expose
+    private String borrowerLat;
+    @SerializedName("borrower_long")
+    @Expose
+    private String borrowerLong;
+    @SerializedName("borrower_img_path")
+    @Expose
+    private String borrowerImgPath;
+    @SerializedName("recovery_efforts")
+    @Expose
+    private String recoveryEfforts;
+    @SerializedName("created_at")
+    @Expose
+    private String createdAt;
+    @SerializedName("agent_id")
+    @Expose
+    private String agentId;
+
+    public GeoData(String id, String borrowerName, String borrowerAddress, String borrowerLat, String borrowerLong, String borrowerImgPath, String recoveryEfforts, String createdAt, String agentId) {
+        this.id = id;
+        this.borrowerName = borrowerName;
+        this.borrowerAddress = borrowerAddress;
+        this.borrowerLat = borrowerLat;
+        this.borrowerLong = borrowerLong;
+        this.borrowerImgPath = borrowerImgPath;
+        this.recoveryEfforts = recoveryEfforts;
+        this.createdAt = createdAt;
+        this.agentId = agentId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getBorrowerName() {
+        return borrowerName;
+    }
+
+    public void setBorrowerName(String borrowerName) {
+        this.borrowerName = borrowerName;
+    }
+
+    public String getBorrowerAddress() {
+        return borrowerAddress;
+    }
+
+    public void setBorrowerAddress(String borrowerAddress) {
+        this.borrowerAddress = borrowerAddress;
+    }
+
+    public String getBorrowerLat() {
+        return borrowerLat;
+    }
+
+    public void setBorrowerLat(String borrowerLat) {
+        this.borrowerLat = borrowerLat;
+    }
+
+    public String getBorrowerLong() {
+        return borrowerLong;
+    }
+
+    public void setBorrowerLong(String borrowerLong) {
+        this.borrowerLong = borrowerLong;
+    }
+
+    public String getBorrowerImgPath() {
+        return borrowerImgPath;
+    }
+
+    public void setBorrowerImgPath(String borrowerImgPath) {
+        this.borrowerImgPath = borrowerImgPath;
+    }
+
+    public String getRecoveryEfforts() {
+        return recoveryEfforts;
+    }
+
+    public void setRecoveryEfforts(String recoveryEfforts) {
+        this.recoveryEfforts = recoveryEfforts;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(String agentId) {
+        this.agentId = agentId;
+    }
+}
